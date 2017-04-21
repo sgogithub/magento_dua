@@ -1,0 +1,33 @@
+<?php
+
+namespace Espay\Pg\Setup;
+
+use Magento\Framework\Setup\InstallDataInterface;
+use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
+
+class InstallData implements InstallDataInterface
+{
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+        $installer = $setup;
+        $installer->startSetup();
+
+        $tableName = $installer->getTable("sales_order_status");
+        if($installer->getConnection()->isTableExists($tableName) == true){
+          $data = [
+            [
+              'status' => 'espay_mandiriib',
+              'label' => 'Espay Mandiri IB'
+            ]
+          ];
+
+          // insert data
+          foreach ($data as $item) {
+            $installer->getConnection()->insert($tableName, $item);
+          }
+        }
+
+        $installer->endSetup();
+    }
+}
