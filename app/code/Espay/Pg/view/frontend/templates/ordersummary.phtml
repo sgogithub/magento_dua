@@ -1,0 +1,87 @@
+<div align="center">
+
+  <!-- <div class="page-title">
+      <h1 style="text-align: center;">Order Summary</h1>
+  </div> -->
+
+  <div class="opc-block-summary" data-bind="blockLoader: isLoading"  style="width: 60%;">
+    <span data-bind="i18n: 'Order Confirmation'" class="title">Order Confirmation</span>
+    <span data-bind="i18n: '(<?= $this->getProductName() ?>)'" class="title">(<?= $this->getProductName() ?>)</span>
+
+<table class="data table table-totals">
+    <caption class="table-caption" data-bind="i18n: 'Order Confirmation'">Order Confirmation</caption>
+    <tbody>
+
+<tr class="totals">
+    <th class="mark" scope="row" data-bind="text: title">Cart Subtotal</th>
+    <td class="amount">
+        <span class="price" data-bind="text: getValue(), attr:{'data-label': title}" data-label="Cart Subtotal">IDR<?= $this->getSubtotal() ?></span>
+    </td>
+</tr>
+
+<tr class="totals discount">
+    <th class="mark" scope="row">
+        <span class="title" data-bind="text: title">Discount</span>
+        <span class="discount coupon" data-bind="text: getCouponCode()"></span>
+    </th>
+    <td class="amount">
+        <span class="price" data-bind="text: getValue(), attr: {'data-th': name}">-IDR<?= $this->getDiscountAmount() ?></span>
+    </td>
+</tr>
+
+<tr class="totals">
+    <th class="mark" scope="row">
+        <span class="title" data-bind="text: title"><?= $this->getFeeLabel(); ?></span>
+    </th>
+    <td class="amount">
+        <span class="price" data-bind="text: getValue(), attr: {'data-th': name}">IDR<?= $this->getServiceFee() ?></span>
+    </td>
+</tr>
+
+
+    <tr class="totals shipping excl">
+        <th class="mark" scope="row">
+            <span class="label" data-bind="i18n: title">Shipping</span>
+            <span class="value">&nbsp;</span>
+        </th>
+        <td class="amount">
+            <span class="price" data-bind="text: getValue(), attr: {'data-th': title}">IDR<?= $this->getShippingAmount() ?></span>
+
+        </td>
+    </tr>
+
+    <tr class="totals">
+        <th class="mark" scope="row">
+            <span class="label" data-bind="i18n: title"><strong>Order Totals</strong></span>
+        </th>
+        <td class="amount">
+            <span class="price" data-bind="text: getValue(), attr: {'data-th': title}"><strong>IDR<?= $this->getGrandTotal() ?></strong></span>
+        </td>
+    </tr>
+
+<tr>
+  <td></td>
+  <td align="right">
+
+    <form method="post" name="f_redirect" id="f_redirect" action="<?= $this->getUrlRedirect(); ?>">
+        <input type="hidden" name="quote_id" id="quote_id" value="<?= $this->getOrderId(); ?>"/>
+        <input type="hidden" name="back_url" id="back_url" value="<?= $this->getBackUrl(); ?>"/>
+        <input type="hidden" name="product_value" id="product_value" value="<?= $this->getProductValue(); ?>"/>
+
+        <div class="primary">
+            <button class="action primary" style="height:50px; width:250px;"
+                    type="submit">
+                <span>Process Payment</span>
+            </button>
+        </div>
+    </form>
+
+
+  </td>
+</tr>
+    </tbody>
+</table>
+
+</div>
+
+</div>

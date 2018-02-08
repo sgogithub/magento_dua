@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="espay" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Espay Payment Gateway</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="order_status" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>New Order Status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status\NewStatus</source_model>
+                </field>
+                <field id="is_production" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Is Production</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="password" translate="label" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                </field>
+                <field id="signature_key" translate="label" type="text" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Signature Key</label>
+                </field>
+                <field id="merchant_key" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Merchant Key</label>
+                </field>
+                <field id="espay_bcaatm_fee" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>BCA VA Fee</label>
+                </field>
+                <field id="espay_bcaklikpay_fee" translate="label" type="text" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>BCA Klikpay Fee</label>
+                </field>
+                <field id="espay_biiatm_fee" translate="label" type="text" sortOrder="32" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>BII ATM Fee</label>
+                </field>
+                <field id="espay_epaybri_fee" translate="label" type="text" sortOrder="33" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>e-Pay BRI Fee</label>
+                </field>
+                <field id="espay_danamonob_fee" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Danamon Online Banking Fee</label>
+                </field>
+                <field id="espay_tcash_fee" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>TELKOMSEL CASH Fee</label>
+                </field>
+                <field id="espay_sgoemoney_fee" translate="label" type="text" sortOrder="36" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>EMONEY PIN Fee</label>
+                </field>
+                <field id="espay_mandiriib_fee" translate="label" type="text" sortOrder="37" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>MANDIRI IB Fee</label>
+                </field>
+                <field id="espay_finpay195_fee" translate="label" type="text" sortOrder="38" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Modern Channel Fee</label>
+                </field>
+                <field id="espay_creditcard_fee" translate="label" type="text" sortOrder="39" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Credit Card Visa / Master Fee</label>
+                </field>
+                <field id="espay_creditcard_mdr" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Credit Card Visa / Master Mdr (%)</label>
+                </field>
+                <field id="espay_mandiriecash_fee" translate="label" type="text" sortOrder="41" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>MANDIRI E-CASH Fee</label>
+                </field>
+                <field id="espay_muamalatatm_fee" translate="label" type="text" sortOrder="42" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>MUAMALAT ATM Fee</label>
+                </field>
+                <field id="espay_nobupay_fee" translate="label" type="text" sortOrder="43" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Nobu Pay Fee</label>
+                </field>
+                <field id="espay_permatanetpay_fee" translate="label" type="text" sortOrder="44" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>PermataNet Fee</label>
+                </field>
+                <field id="espay_permataatm_fee" translate="label" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>PERMATA ATM Fee</label>
+                </field>
+                <field id="espay_bcab2b_fee" translate="label" type="text" sortOrder="46" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>BCA BUSINESS Fee</label>
+                </field>
+                <field id="espay_permatapeb_fee" translate="label" type="text" sortOrder="47" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>PERMATA E-BUSINESS Fee</label>
+                </field>
+                <field id="espay_default_fee" translate="label" type="text" sortOrder="48" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default Fee</label>
+                </field>
+                <field id="espay_fee_label" translate="label" type="text" sortOrder="49" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Fee Label</label>
+                </field>
+
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="71" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="instructions" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Instructions</label>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                    <frontend_class>validate-number</frontend_class>
+                </field>
+
+
+            </group>
+        </section>
+    </system>
+</config>

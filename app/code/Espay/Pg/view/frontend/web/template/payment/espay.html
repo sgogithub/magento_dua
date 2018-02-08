@@ -1,0 +1,94 @@
+
+<div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
+    <div class="payment-method-title field choice">
+        <input type="radio"
+               name="payment[method]"
+               class="radio"
+               data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()" />
+        <label data-bind="attr: {'for': getCode()}" class="label"><span data-bind="text: getTitle()"></span></label>
+    </div>
+
+    <div class="payment-method-content rk1">
+        <div class="payment-method-billing-address">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+
+        <div class="checkout-agreements-block">
+        </div>
+
+        <div class="pull-select">
+            <span data-bind="text: getPayments()"></span>
+        </div>
+
+        <label class="label">
+            <span><strong>Choose Payment Method:</strong></span>
+        </label>
+        <br/>
+        <br/>
+
+        <div class="control">
+            <form method="post" name="f_redirect" id="f_redirect">
+                <input type="hidden" name="quote_id" id="quote_id"/>
+                <input type="hidden" name="back_url" id="back_url"/>
+
+                <div class="cc-selector" id="sl_payment">
+                    <table border="1">
+
+                    </table>
+                </div>
+
+                <input type="hidden" name="urlRedirect" id="urlRedirect"/>
+            </form>
+        </div>
+        <br/>
+
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button class="action primary checkout"
+                        type="submit"
+                        data-bind="click: placeOrder, enable: (getCode() == isChecked())">
+                    <span data-bind="text: 'Place Order & Pay'">Place Order & Pay</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    margin-right:16px;
+    width:130px;height:100px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+
+</style>
